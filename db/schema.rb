@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215232952) do
+ActiveRecord::Schema.define(version: 20150215234906) do
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone_number"
+    t.string   "yelp_url"
+    t.time     "opens_at"
+    t.time     "closes_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,5 +41,16 @@ ActiveRecord::Schema.define(version: 20150215232952) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "wait_times", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.integer  "party_size"
+    t.integer  "minutes"
+    t.datetime "checked_at"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "wait_times", ["restaurant_id"], name: "index_wait_times_on_restaurant_id"
 
 end
