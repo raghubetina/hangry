@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  phone_number: MyString
+  yelp_url: MyString
+  opens_at: 2015-02-15 17:37:50
+  closes_at: 2015-02-15 17:37:50
+
+two:
+  name: MyString
+  address: MyString
+  phone_number: MyString
+  yelp_url: MyString
+  opens_at: 2015-02-15 17:37:50
+  closes_at: 2015-02-15 17:37:50
