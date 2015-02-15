@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to new_wait_time_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Wait time
+  <% end %>
+  <h1>Listing wait_times</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Restaurant</th>
+            <th>Party size</th>
+            <th>Minutes</th>
+            <th>Checked at</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @wait_times) do |wait_time| %>
+            <td><%= wait_time.restaurant %></td>
+            <td><%= wait_time.party_size %></td>
+            <td><%= wait_time.minutes %></td>
+            <td><%= wait_time.checked_at %></td>
+            <td><%= link_to 'Show', wait_time %></td>
+        <td><%= link_to 'Edit', edit_wait_time_path(wait_time) %></td>
+        <td><%= link_to 'Destroy', wait_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,44 @@
+<%= form_for(@wait_time, :html => { :class => "form-horizontal", :role => "form" }) do |f| %>
+  <% if @wait_time.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@wait_time.errors.count, "error") %> prohibited this wait_time from being saved:</h4>
+
+      <ul>
+      <% @wait_time.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :restaurant, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :restaurant, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :party_size, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :party_size, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :minutes, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :minutes, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :checked_at, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.datetime_select :checked_at, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

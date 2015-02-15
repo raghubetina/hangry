@@ -1,0 +1,26 @@
+<div class="page-header">
+  <%= link_to wait_times_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_wait_time_path(@wait_time), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show wait_time</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Restaurant:</dt>
+  <dd><%= @wait_time.restaurant %></dd>
+
+  <dt>Party size:</dt>
+  <dd><%= @wait_time.party_size %></dd>
+
+  <dt>Minutes:</dt>
+  <dd><%= @wait_time.minutes %></dd>
+
+  <dt>Checked at:</dt>
+  <dd><%= @wait_time.checked_at %></dd>
+
+</dl>
