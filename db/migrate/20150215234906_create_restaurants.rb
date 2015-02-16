@@ -5,8 +5,8 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :address
       t.string :phone_number
       t.string :yelp_url
-      t.time :opens_at
-      t.time :closes_at
+      t.time :opens_at, :default => Time.parse("10:00am")
+      t.time :closes_at, :default => Time.parse("2:00pm")
 
       t.timestamps null: false
     end

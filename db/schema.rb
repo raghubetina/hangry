@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20150215234906) do
     t.string   "address"
     t.string   "phone_number"
     t.string   "yelp_url"
-    t.time     "opens_at"
-    t.time     "closes_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.time     "opens_at",     default: '2000-01-01 16:00:00'
+    t.time     "closes_at",    default: '2000-01-01 20:00:00'
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   create_table "users", force: :cascade do |t|
