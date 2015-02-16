@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
 
 ["arjun@hangry.io", "raghu@hangry.io"].each do |admin|
   User.create :email =>  admin,
@@ -16,4 +10,8 @@ User.create :email => "team@hangry.io",
             :password => "mechanicalturk",
             :password_confirmation => "mechanicalturk"
 
-
+csv_text = File.read(Rails.root.join("lib", "seeds", "restaurants.csv"))
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  Restaurant.create!(row.to_hash)
+end
