@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20150215234906) do
     t.string   "address"
     t.string   "phone_number"
     t.string   "yelp_url"
-    t.time     "opens_at",     default: '2000-01-01 16:00:00'
-    t.time     "closes_at",    default: '2000-01-01 20:00:00'
+    t.time     "opens_at",     default: '2000-01-01 10:00:00'
+    t.time     "closes_at",    default: '2000-01-01 14:00:00'
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
