@@ -1,6 +1,8 @@
 class WaitTimesController < ApplicationController
   before_action :set_wait_time, only: [:show, :edit, :update, :destroy]
 
+  before_action :user_is_admin?, :only => [:index, :edit, :update, :destroy]
+
   # GET /wait_times
   # GET /wait_times.json
   def index

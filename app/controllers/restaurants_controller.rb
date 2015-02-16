@@ -1,6 +1,10 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :authenticate_user!, :only => [:index, :show]
+
+  before_action :user_is_admin?, :only => [:new, :create, :edit, :update, :destroy]
+
   # GET /restaurants
   # GET /restaurants.json
   def index
