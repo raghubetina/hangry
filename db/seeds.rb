@@ -8,8 +8,8 @@
 
 ["arjun@hangry.io", "raghu@hangry.io"].each do |admin|
   User.create :email =>  admin,
-              :password => "12341234",
-              :password_confirmation => "12341234"
+              :password => "brunchtime",
+              :password_confirmation => "brunchtime"
 end
 
 User.create :email => "team@hangry.io",
