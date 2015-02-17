@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'ruby-aws'
 gem 'devise'
 gem 'devise-bootstrap-views'
 
